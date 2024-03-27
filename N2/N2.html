@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Копирование</title>
+</head>
+<body>
+    <h2>Объекты выведены в консоль браузера.</h2>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+        function deepCopy(obj) {
+            return _.cloneDeep(obj);
+        }
+        const originalObject = {
+                obj: { a: 1, b: 2 },
+    		arr: [3, 4, 5],
+    		date: new Date(),
+    		map: new Map([['key1', 'value1'], ['key2', 'value2']]),
+    		set: new Set([1, 2, 3, 4])
+        };
+
+        const copiedObject = deepCopy(originalObject);
+	console.log(originalObject);
+	console.log(copiedObject);
+	console.log(copiedObject == originalObject);
+    </script>
+</body>
+</html>
